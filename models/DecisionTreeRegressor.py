@@ -1,7 +1,7 @@
-from Node import Node
+from models.Node import Node
 import pandas as pd
 import numpy as np
-class DecisionTreeRegressor(object):
+class OurDecisionTreeRegressor(object):
     def fit(self, X, y, min_leaf = 10, max_depth=6):
         X.index=range(0, X.shape[0],1)
         y.index=range(0, X.shape[0],1)

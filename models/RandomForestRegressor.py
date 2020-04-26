@@ -1,6 +1,6 @@
-from DecisionTreeRegressor import DecisionTreeRegressor
+from models.DecisionTreeRegressor import OurDecisionTreeRegressor
 import numpy as np
-class RandomForestRegressor(object):
+class OurRandomForestRegressor(object):
     def __init__(self, X, y, min_leaf, max_depth=None, tree_number=5, max_feature=None, max_sample=None,random_seed=0, bootstrap=True):
         self.X=X
         self.target=y
@@ -26,7 +26,7 @@ class RandomForestRegressor(object):
             newx.index=range(0, newx.shape[0],1)
             newy=self.target[new_inds]
             newy.index=range(0, len(newy),1)
-            self.dtrees.append(DecisionTreeRegressor().fit(newx, newy, min_leaf=self.min_leaf,max_depth=self.max_depth).dtree)
+            self.dtrees.append(OurDecisionTreeRegressor().fit(newx, newy, min_leaf=self.min_leaf,max_depth=self.max_depth).dtree)
         return self
     def predict(self,data):
         alls=np.zeros((len(self.dtrees), data.shape[0]))
