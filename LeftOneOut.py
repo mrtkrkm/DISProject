@@ -1,7 +1,7 @@
 import pandas as pd 
 import numpy as np 
 from Preprocess import PreProcess
-from DecisionTreeRegressor import DecisionTreeRegressor
+from models.DecisionTreeRegressor import DecisionTreeRegressor
 from scoreFunc import Scores
 from tqdm import notebook
 
