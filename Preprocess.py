@@ -22,10 +22,8 @@ class PreProcess(object):
         for col in cols:
             for i in range(1,shift_d+1):
                 self.df[f"{col}shift-{i}"]=self.df[col].shift(i)
-                #self.df[f"shift-{i}-wd"]=self.df["wd (deg)"].shift(i)
                 self.cols.append(f"{col}shift-{i}")
-                #self.cols.append(f"shift-{i}-wd")
-            
+
             
     def _convert_todate(self, lss, year):
         date=str(year)+'-'+lss[2:4]+'-'+lss[0:2]+' '+lss[4:6]+':'+lss[6:]
