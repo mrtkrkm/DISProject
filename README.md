@@ -28,7 +28,7 @@ To see the results with different features and different train and test size run
 pr=PreProcess(df, ddir='data/output.txt', target_col='T (degC)', shift_day=7)
 ```
 
-df is DataFrame
+df is DataFrame that we want use
 shift_day is desired shifting value
 
 ```python
@@ -60,10 +60,19 @@ X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 30, 1)
 
 The first number is the day_start. Second number is training_day. And the last number is the test_day
 
-For daily prediction it is good. If you want to predict weekly you can use
+
+
+If you want to predict weekly you can use the below code
 
 ```python
 X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 30, 7)
 ```
+
+For monthly you can use the below code
+
+```python
+X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 70, 30)
+```
+
 
 
