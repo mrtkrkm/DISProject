@@ -1,5 +1,7 @@
 # Temperature Predicting
 
+https://github.com/mrtkrkm/DISProject
+
 For preprocessing
 
 python day_avg.py jena_climate_2009_2016.csv >> <output_file>
@@ -20,8 +22,10 @@ hadoop hdfs:///api.f
 both inputs jena_climate_2009_2016.csv or api.f must be at the same folder with python files.
 If hadoop way is going to be used, corresponding configuration and hadoop/file folder paths must be organized.
 
+
+
 To find the best features based on the different shift values run FeatureSelection.ipynb
-After it choose the best features from the results dataframe based on the their results.
+After, it chooses the best features from the results dataframe based on the their results.
 
 To see the results with different features and different train and test size run Results.ipynb
 ```python
@@ -40,9 +44,9 @@ day_number is desired training day
 day_pred  is desired test_size
 day_start is the starting index from dataframe
 
-To see the results from LSTM models u have to run LSTM Training.ipynb
+To see the results from LSTM models you have to run LSTM Training.ipynb
 
-If you don't have the good GPU u can change the device as
+If you don't have a good GPU you can change the device as
 
 ```python
 device=torch.device('cpu')
@@ -52,7 +56,7 @@ device=torch.device('cpu')
 TrainFrame=create_features(TrainFrame, 3, important_features)
 ```
 
-You can change the number 3 if you want. It it show the shift_day
+You can change the number 3 if you want. It shows the shift_day
 
 ```python
 X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 30, 1)
@@ -62,17 +66,17 @@ The first number is the day_start. Second number is training_day. And the last n
 
 
 
-If you want to predict weekly you can use the below code
+If you want to predict weekly you can use the code below
 
 ```python
 X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 30, 7)
 ```
 
-For monthly you can use the below code
+For monthly you can use the code below
 
 ```python
 X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 70, 30)
 ```
 
 
-
+Berke Kagan NOHUT, Murat KORKMAZ
