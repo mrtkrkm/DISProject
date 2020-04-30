@@ -29,9 +29,41 @@ pr=PreProcess(df, ddir='data/output.txt', target_col='T (degC)', shift_day=7)
 ```
 
 df is DataFrame
-shift_y is desired shifting value
+shift_day is desired shifting value
 
 ```python
 X_train, y_train, X_test, y_test=pr.split_data(day_number=30, day_pred=1, day_start=0)
 ```
+
+
+day_number is desired training day
+day_pred  is desired test_size
+day_start is the starting index from dataframe
+
+To see the results from LSTM models u have to run LSTM Training.ipynb
+
+If you don't have the good GPU u can change the device as
+
+```python
+device=torch.device('cpu')
+```
+
+```python
+TrainFrame=create_features(TrainFrame, 3, important_features)
+```
+
+You can change the number 3 if you want. It it show the shift_day
+
+```python
+X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 30, 1)
+```
+
+The first number is the day_start. Second number is training_day. And the last number is the test_day
+
+For daily prediction it is good. If you want to predict weekly you can use
+
+```python
+X_train, y_train, X_test, y_test=split_data(TrainFrame, 0, 30, 7)
+```
+
 
